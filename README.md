@@ -11,7 +11,11 @@ Database Migatrion Service settings for optimal migration and creation
 - Criaremos tanto o source endpoint quanto o target endpoint. Na hora da criação, marque a caixa "select rds db instance" e selecione sua instancia de origem/destino.
 - Nas configurações, selecione a source engine desejada e depois clique em "provide access information manually" na opção de "access to endpoint database".
 - Em "username" e "password" passe o user master do banco de origem/destino e senha. Clique em "create endpoint".
+
+  
 *Lembrando que na hora da criação dos endpoints, o "source endpoint" é o seu banco de origem e o "target endpoint" é o banco de destino.*
+
+
 - Após a criação dos endpoints, crie as tasks de migração em "database migration tasks".
 - Clique em "create task" e passe as informações necessárias(task identifier,replication instance, source database endpoint e target database endpoint).
 *Para o resto das configurações, siga a parte de "Configurações de otimização e conectividade".*
@@ -27,4 +31,6 @@ Database Migatrion Service settings for optimal migration and creation
 - Clique em "advanced task settings" e deixe da seguinte forma: History timeslot(minutes) = 5/Create control table in target using schema = deixe em branco/Na tabela de controle e name in targe, deixe todas as opções marcadas.
 - Em "full load tuning settings" deixe da seguinte forma: Maximum number of tables to load in parallel = 16/Transaction consistency timeout(seconds) = 600/Commit rate during full load = 50000.
 - Após setar essas configurações clique em "save".
+
+  
 *Lembrando que essas configurações de otimização foram baseadas na necessidade que eu tive. Com essas configurações, é possível ter uma ideia de como modificá-las de acordo com a sua necessidade.*
